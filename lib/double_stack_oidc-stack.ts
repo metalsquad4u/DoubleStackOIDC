@@ -1,16 +1,15 @@
 import * as cdk from 'aws-cdk-lib';
+import * as s3 from 'aws-cdk-lib/aws-s3';
+import {Stack, StackProps} from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
-export class DoubleStackOidcStack extends cdk.Stack {
+export class DoubleStackOidcStack extends Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'DoubleStackOidcQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    const s3Bucket = new s3.Bucket(this, 'double-stack-oidc-bukect-test', {
+        removalPolicy: cdk.RemovalPolicy.DESTROY,
+      });
   }
 }
