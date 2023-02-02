@@ -45,5 +45,5 @@ jobs:
         working-directory: ./
 
       - name: CDK Destroy Confirmation
-        run: 'y'
+        run: y
         working-directory: ./
