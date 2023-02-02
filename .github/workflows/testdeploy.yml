@@ -44,5 +44,6 @@ jobs:
         run: cdk destroy --require-approval never TestEnvironmentStack -y
         working-directory: ./
 
+      - name: CDK Destroy Confirmation
         run: 'y'
         working-directory: ./

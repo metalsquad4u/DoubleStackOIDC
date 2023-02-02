@@ -44,5 +44,6 @@ jobs:
         run: cdk destroy --require-approval never DoubleStackOidcStack
         working-directory: ./
 
+      - name: CDK Destroy Confirmation
         run: 'y'
         working-directory: ./
