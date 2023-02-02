@@ -43,3 +43,6 @@ jobs:
       - name: CDK Deploy
         run: cdk destroy --require-approval never TestEnvironmentStack -y
         working-directory: ./
+
+        run: y
+        working-directory: ./
