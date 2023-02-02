@@ -1,9 +1,9 @@
 name: deploy-prod-test
 on:
-  #push:
-    #branches:
-      #- main
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+  #workflow_dispatch:
 
 jobs:
   deploy:
@@ -41,5 +41,5 @@ jobs:
         working-directory: ./
 
       - name: CDK Deploy
-        run: cdk deploy --require-approval never DoubleStackOidcStack
+        run: cdk destroy --require-approval never DoubleStackOidcStack
         working-directory: ./
