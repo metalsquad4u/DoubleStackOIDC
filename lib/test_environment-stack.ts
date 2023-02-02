@@ -14,5 +14,13 @@ export class TestEnvironmentStack extends Stack {
         description: 'KMS key for encrypting the objects in an S3 bucket',
         enableKeyRotation: false,
       });
+
+      const key2 = new kms.Key(this, 'dev-kms-key', {
+        removalPolicy: cdk.RemovalPolicy.DESTROY,
+        pendingWindow: cdk.Duration.days(7),
+        alias: 'alias/testenvkey',
+        description: 'KMS key for encrypting the objects in an S3 bucket',
+        enableKeyRotation: false,
+      });
     }
   }

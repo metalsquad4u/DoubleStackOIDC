@@ -11,5 +11,9 @@ export class DoubleStackOidcStack extends Stack {
     const s3Bucket = new s3.Bucket(this, 'double-stack-oidc-bukect-test', {
         removalPolicy: cdk.RemovalPolicy.DESTROY,
       });
+
+      const s3Buckettwo = new s3.Bucket(this, 'double-stack-oidc-bukect-test-two', {
+        removalPolicy: cdk.RemovalPolicy.DESTROY,
+      });
   }
 }
