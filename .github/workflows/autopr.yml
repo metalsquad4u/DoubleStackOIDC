@@ -17,7 +17,7 @@ jobs:
         pr_title: "IN-425: Testing another PR"
         pr_body: |
           "I want to test merging from feature branch to main by 2nd PR"
-        pr_reviewer: "YAbdul,sulazhy"                             # Comma-separated list (no spaces)
+        pr_reviewer: "metalsquad4u"                             # Comma-separated list (no spaces)
         pr_assignee: "metalsquad4u"                         # Comma-separated list (no spaces)
         pr_label: "oracle 2"                               # Comma-separated list (no spaces)
         #pr_milestone: "Milestone 1"                       # Milestone name
