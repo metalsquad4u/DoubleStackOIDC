@@ -8,8 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: update hub version
-      run: brew update && brew upgrade hub
     - name: pull-request
       id: open-pr
       uses: repo-sync/pull-request@v2
@@ -23,7 +21,7 @@ jobs:
         pr_assignee: "metalsquad4u"                         # Comma-separated list (no spaces)
         pr_label: "oracle 2"                               # Comma-separated list (no spaces)
         #pr_milestone: "Milestone 1"                       # Milestone namee
-        github_token: ${{ secrets.GITHUB_TOKEN }}      # If blank, default: secrets.GITHUB_TOKEN
+        #github_token: ${{ secrets.GITHUB_TOKEN }}      # If blank, default: secrets.GITHUB_TOKEN
     - name: output-url
       run: echo ${{steps.open-pr.outputs.pr_url}}
     - name: output-number
