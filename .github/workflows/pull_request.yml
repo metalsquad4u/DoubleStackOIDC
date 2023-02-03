@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+    - dev
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: pull-request
+      id: open-pr
+      uses: repo-sync/pull-request@v2
+      with:
+        source_branch: ""  
+        destination_branch: "main"
+        pr_title: "IN-425: Testing another PR"
+        pr_body: |
+          "I want to test merging from feature branch to main by 2nd PR"
+        pr_reviewer: "YAbdul"                             # Comma-separated list (no spaces)
+        pr_assignee: "metalsquad4u"                         # Comma-separated list (no spaces)
+        pr_label: "oracle 2"
