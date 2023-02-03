@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: update hub version
+      run: brew update && brew upgrade hub
     - name: pull-request
       id: open-pr
       uses: repo-sync/pull-request@v2
