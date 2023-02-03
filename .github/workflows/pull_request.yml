@@ -20,7 +20,7 @@ jobs:
         pr_reviewer: "YAbdul"                             # Comma-separated list (no spaces)
         pr_assignee: "metalsquad4u"                         # Comma-separated list (no spaces)
         pr_label: "oracle 2"                               # Comma-separated list (no spaces)
-        #pr_milestone: "Milestone 1"                       # Milestone name
+        #pr_milestone: "Milestone 1"                       # Milestone nameee
         github_token: ${{ secrets.GITHUB_TOKEN }}      # If blank, default: secrets.GITHUB_TOKEN
     - name: output-url
       run: echo ${{steps.open-pr.outputs.pr_url}}
