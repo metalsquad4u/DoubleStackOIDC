@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+    - dev
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: pull-request
+      id: open-pr
+      uses: repo-sync/pull-request@v2
+      with:
+        source_branch: ""                                 # If blank, default: triggered branch
+        destination_branch: "main"
+        pr_title: "IN-425: Testing another PR"
+        pr_body: |
+          "I want to test merging from feature branch to main by 2nd PR"
+        pr_reviewer: "YAbdul,sulazhy"                             # Comma-separated list (no spaces)
+        pr_assignee: "metalsquad4u"                         # Comma-separated list (no spaces)
+        pr_label: "oracle 2"                               # Comma-separated list (no spaces)
+        #pr_milestone: "Milestone 1"                       # Milestone name
+        github_token: ${{ secrets.GITHUB_TOKEN }}      # If blank, default: secrets.GITHUB_TOKEN
+    - name: output-url
+      run: echo ${{steps.open-pr.outputs.pr_url}}
+    - name: output-number
+      run: echo ${{steps.open-pr.outputs.pr_number}}
+    - name: output-created
+      run: echo ${{steps.open-pr.outputs.pr_created}}
+    - name: output-has-changed-files
+      run: echo ${{steps.open-pr.outputs.has_changed_files}}
